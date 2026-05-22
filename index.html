@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechBugs Hackathon 2026</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            background: #444;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background: #555;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .radio-checkbox-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>TechBugs Hackathon 2026</h1>
+        <p>Sân chơi lập trình đột phá - Chinh phục thử thách</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Trang chủ</a></li>
+            <li><a href="#schedule">Lịch trình</a></li>
+            <li><a href="#register">Đăng ký</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="home">
+            <h2>Giới thiệu cuộc thi</h2>
+            <p>TechBugs Hackathon là sự kiện lập trình kéo dài 48 giờ liên tục dành cho các bạn trẻ đam mê công nghệ.
+                Hãy cùng nhau sáng tạo ra những giải pháp thay đổi thế giới!</p>
+        </section>
+
+        <section id="schedule">
+            <h2>Lịch trình sự kiện</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ngày</th>
+                        <th>Khung giờ</th>
+                        <th>Hoạt động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3" style="font-weight: bold; background: #eef;">Ngày 1<br>(23/05)</td>
+                        <td>08:00 - 09:00</td>
+                        <td>Check-in & Nhận bộ Kit cuộc thi</td>
+                    </tr>
+                    <tr>
+                        <td>09:00 - 10:30</td>
+                        <td>Khai mạc & Công bố đề bài chính thức</td>
+                    </tr>
+                    <tr>
+                        <td>10:30 - 24:00</td>
+                        <td>Các đội bắt đầu Code tập trung (Hack Time)</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="3" style="background-color: #ffe6e6; font-weight: bold;">
+                            ĐÊM HACKATHON: Phòng Lab mở cửa 24/7 - Có Mentor hỗ trợ trực tiếp
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="3" style="font-weight: bold; background: #efe;">Ngày 2<br>(24/05)</td>
+                        <td>00:00 - 12:00</td>
+                        <td>Hoàn thiện sản phẩm & Cài đặt Demo</td>
+                    </tr>
+                    <tr>
+                        <td>12:00 - 14:00</td>
+                        <td>Nộp source code và Slide thuyết trình</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 17:00</td>
+                        <td>Ban giám khảo chấm thi & Bế mạc trao giải</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="register">
+            <h2>Cổng đăng ký đội thi</h2>
+            <form action="#" method="POST" onsubmit="alert('Đăng ký giả lập thành công!'); return false;">
+
+                <fieldset>
+                    <legend>Thông tin Đội thi</legend>
+
+                    <div class="form-group">
+                        <label for="teamName">Tên đội thi:</label>
+                        <input type="text" id="teamName" name="teamName" placeholder="Nhập tên đội của bạn" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bảng thi đấu:</label>
+                        <div class="radio-checkbox-group">
+                            <label><input type="radio" name="track" value="web" checked> Bảng Web/Mobile App</label>
+                            <label><input type="radio" name="track" value="ai"> Bảng AI/Machine Learning</label>
+                            <label><input type="radio" name="track" value="iot"> Bảng IoT/Hardware</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Thông tin Trưởng nhóm</legend>
+
+                    <div class="form-group">
+                        <label for="leaderName">Họ và tên:</label>
+                        <input type="text" id="leaderName" name="leaderName" placeholder="Nguyễn Văn A" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="leaderEmail">Email liên hệ:</label>
+                        <input type="email" id="leaderEmail" name="leaderEmail" placeholder="leader@example.com"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kỹ năng hiện có:</label>
+                        <div class="radio-checkbox-group">
+                            <label><input type="checkbox" name="skills" value="html-css"> HTML/CSS</label>
+                            <label><input type="checkbox" name="skills" value="javascript"> JavaScript</label>
+                            <label><input type="checkbox" name="skills" value="python"> Python</label>
+                            <label><input type="checkbox" name="skills" value="design"> UI/UX Design</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div style="text-align: right;">
+                    <button type="submit"
+                        style="padding: 10px 25px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">
+                        Xác nhận đăng ký
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TechBugs Organization. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
