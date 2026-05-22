@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cinema POS System</title>
+    <style>
+        :root {
+            --color-empty: #e0e0e0;
+            --color-selected: #2ecc71;
+            --color-sold: #e74c3c;
+            --color-vip: #f1c40f;
+            --color-couple: #9b59b6;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f6fa;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .screen-area {
+            flex: 2;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Cinema Screen Simulation */
+        .screen {
+            width: 80%;
+            height: 20px;
+            background: #ccc;
+            margin: 0 auto 30px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 20px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        /* Grid Seats */
+        .seating-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .seat {
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #fff;
+            transition: all 0.2s;
+        }
+
+        /* Class trạng thái */
+        .seat.empty {
+            background-color: var(--color-empty);
+            color: #333;
+        }
+
+        .seat.vip {
+            background-color: var(--color-vip);
+            color: #333;
+        }
+
+        .seat.couple {
+            background-color: var(--color-couple);
+        }
+
+        .seat.selected {
+            background-color: var(--color-selected) !important;
+            color: white;
+        }
+
+        .seat.sold {
+            background-color: var(--color-sold) !important;
+            cursor: not-allowed;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .legend-box {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+        }
+
+        /* Utilities */
+        .btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-success {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .dashboard {
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        canvas {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Hệ thống POS Bán Vé Rạp Chiếu Phim</h1>
+
+    <div class="container">
+        <div class="screen-area">
+            <div class="screen">MÀN HÌNH</div>
+            <div class="seating-grid" id="seatingGrid"></div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-box" style="background: var(--color-empty)"></div> Thường
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: var(--color-vip)"></div> VIP
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: var(--color-couple)"></div> Couple
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: var(--color-selected)"></div> Đang chọn
+                </div>
+                <div class="legend-item">
+                    <div class="legend-box" style="background: var(--color-sold)"></div> Đã bán
+                </div>
+            </div>
+
+            <div style="margin-top: 20px; text-align: center;">
+                <label>Mua nhanh ghế kề nhau: </label>
+                <input type="number" id="autoPickCount" min="1" max="5" value="2" style="width: 50px; padding: 5px;">
+                <button class="btn btn-primary" id="btnAutoPick"
+                    style="width: auto; padding: 5px 15px;">Auto-pick</button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>Giỏ Hàng</h3>
+            <hr>
+            <p><strong>Phim:</strong> <span id="movieName">Avengers: Endgame</span></p>
+            <p><strong>Giá gốc:</strong> <span id="moviePrice">100,000</span> đ</p>
+            <div id="cartDetails" style="min-height: 100px; font-size: 14px; color: #555;">Chưa chọn ghế nào</div>
+            <hr>
+            <h4>Tổng tiền: <span id="totalPrice" style="color: #e74c3c;">0</span> đ</h4>
+            <button class="btn btn-success" id="btnCheckout">THANH TOÁN</button>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <h3>Doanh thu theo ca</h3>
+        <canvas id="revenueChart" width="600" height="250"></canvas>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
