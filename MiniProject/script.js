@@ -452,26 +452,6 @@ function saveData() {
     );
 }
 
-function saveData() {
-
-    localStorage.setItem(
-        "seats",
-        JSON.stringify(seats)
-    );
-
-    localStorage.setItem(
-        "totalRevenue",
-        totalRevenue
-    );
-
-    localStorage.setItem(
-        "revenueHistory",
-        JSON.stringify(
-            revenueHistory
-        )
-    );
-}
-
 function drawRevenueChart() {
 
     const canvas =
