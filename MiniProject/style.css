@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #1c1c1c;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.cinema {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen {
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+#seatMap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.seat {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+}
+
+.seat:hover {
+    transform: scale(1.08);
+}
+
+.empty {
+    background: #6c757d;
+}
+
+.vip {
+    background: linear-gradient(135deg,
+            #ffd700,
+            #ffb700);
+    color: black;
+}
+
+.couple {
+    background: #9c27b0;
+}
+
+.sold {
+    background: #dc3545;
+    cursor: not-allowed;
+}
+
+.selected {
+    background: #22de22;
+    color: black;
+}
+
+.sold:hover {
+    transform: none;
+}
+
+.couple-seat {
+    width: 108px;
+}
+
+.legend {
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+}
+
+.box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+
+.sidebar {
+    margin-top: 30px;
+}
+
+#selectedSeats {
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+
+#selectedSeats p {
+    margin: 5px 0;
+}
+
+.sidebar button {
+    padding: 12px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#autoPickBtn {
+    background: #17a2b8;
+    color: white;
+}
+
+#checkoutBtn {
+    background: #28a745;
+    color: white;
+}
+
+.sidebar button:hover {
+    opacity: 0.9;
+}
+
+.report {
+    margin-top: 40px;
+}
+
+#revenueChart {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+}

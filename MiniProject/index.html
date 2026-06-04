@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cinema POS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Cinema POS</h1>
+
+    <section class="cinema">
+        <div class="screen">MÀN HÌNH</div>
+
+        <div class="seats">
+            <div id="seatMap"></div>
+        </div>
+    </section>
+
+    <section class="legend">
+        <div>
+            <span class="box empty"></span>
+            Ghế thường
+        </div>
+
+        <div>
+            <span class="box vip"></span>
+            Ghế VIP
+        </div>
+
+        <div>
+            <span class="box couple"></span>
+            Ghế đôi
+        </div>
+
+        <div>
+            <span class="box sold"></span>
+            Đã bán
+        </div>
+
+        <div>
+            <span class="box selected"></span>
+            Đang chọn
+        </div>
+    </section>
+
+    <section class="sidebar">
+        <h2>Giỏ hàng</h2>
+
+        <div id="selectedSeats"></div>
+
+        <h3>
+            Tổng tiền:
+            <span id="total">0</span> VNĐ
+        </h3>
+
+        <button id="autoPickBtn">
+            Chọn nhanh
+        </button>
+
+        <button id="checkoutBtn">
+            Thanh toán
+        </button>
+    </section>
+
+    <section class="report">
+        <h2>Doanh thu</h2>
+
+        <canvas id="revenueChart" width="700" height="300">
+        </canvas>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
