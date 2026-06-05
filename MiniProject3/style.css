@@ -1,0 +1,381 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #1c1c1c;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.cinema {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.screen {
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+#seatMap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.seat {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+}
+
+.seat:hover {
+    transform: scale(1.08);
+}
+
+.empty {
+    background: #6c757d;
+}
+
+.vip {
+    background: linear-gradient(135deg,
+            #ffd700,
+            #ffb700);
+    color: black;
+}
+
+.couple {
+    background: #9c27b0;
+}
+
+.sold {
+    background: #dc3545;
+    cursor: not-allowed;
+}
+
+.selected {
+    background: #22de22;
+    color: black;
+}
+
+.sold:hover {
+    transform: none;
+}
+
+.couple-seat {
+    width: 108px;
+}
+
+.legend {
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    flex-wrap: wrap;
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+}
+
+.box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+
+.sidebar {
+    margin-top: 30px;
+}
+
+#selectedSeats {
+    min-height: 100px;
+    margin-bottom: 20px;
+}
+
+#selectedSeats p {
+    margin: 5px 0;
+}
+
+.sidebar button {
+    padding: 12px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#autoPickBtn {
+    background: #17a2b8;
+    color: white;
+}
+
+#checkoutBtn {
+    background: #28a745;
+    color: white;
+}
+
+.sidebar button:hover {
+    opacity: 0.9;
+}
+
+.report {
+    margin-top: 40px;
+}
+
+#revenueChart {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.room-selector {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.room-selector button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.room-selector button:nth-child(1) {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+}
+
+.room-selector button:nth-child(2) {
+    background: linear-gradient(135deg, #28a745, #7dff6d);
+}
+
+.room-selector button:nth-child(3) {
+    background: linear-gradient(135deg, #ff6b6b, #ffb347);
+}
+
+.room-selector button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.room-selector button:active {
+    transform: scale(0.95);
+}
+
+.room-selector button.active-room {
+    outline: 3px solid white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.active-room {
+    outline: 3px solid white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.admin-dashboard {
+    margin-top: 50px;
+    padding: 30px;
+    background: #2b2b2b;
+    border-radius: 15px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.admin-dashboard h2 {
+    margin-bottom: 25px;
+    color: #ffd700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admin-dashboard input {
+    width: 250px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.admin-dashboard button {
+    padding: 12px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+}
+
+.admin-dashboard button:nth-of-type(1) {
+    background: #007bff;
+}
+
+.admin-dashboard button:nth-of-type(2) {
+    background: #28a745;
+}
+
+.admin-dashboard button:nth-of-type(3) {
+    background: #ff9800;
+}
+
+.admin-dashboard button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+}
+
+#movieList {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.movie-item {
+    background: linear-gradient(135deg,
+            #3b3b3b,
+            #4a4a4a);
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-align: left;
+    border-left: 5px solid #ffd700;
+    transition: 0.3s;
+}
+
+.movie-item:hover {
+    transform: translateX(5px);
+    background: linear-gradient(135deg,
+            #454545,
+            #5a5a5a);
+}
+
+.movie-item strong {
+    color: #ffd700;
+    font-size: 18px;
+}
+
+.movie-item p {
+    margin: 6px 0;
+    color: #ddd;
+}
+
+.report-dashboard {
+    margin-top: 50px;
+    padding: 30px;
+    background: #2b2b2b;
+    border-radius: 15px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.report-dashboard h2 {
+    color: #00d4ff;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.report-dashboard button {
+    padding: 12px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Vé VIP */
+.report-dashboard button:nth-child(2) {
+    background: linear-gradient(135deg,
+            #ffd700,
+            #ffb700);
+    color: black;
+}
+
+/* Tổng doanh thu */
+.report-dashboard button:nth-child(3) {
+    background: linear-gradient(135deg,
+            #28a745,
+            #5cff7a);
+}
+
+/* In vé */
+.report-dashboard button:nth-child(4) {
+    background: linear-gradient(135deg,
+            #007bff,
+            #00c6ff);
+}
+
+.report-dashboard button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+}
+
+#reportResult {
+    margin-top: 25px;
+    min-height: 80px;
+    padding: 20px;
+    background: #333;
+    border-radius: 12px;
+    border-left: 5px solid #00d4ff;
+    text-align: left;
+    font-size: 16px;
+    color: #f1f1f1;
+    box-sizing: border-box;
+}
+
+#reportResult p {
+    margin: 8px 0;
+}
+
+#reportResult strong {
+    color: #ffd700;
+}

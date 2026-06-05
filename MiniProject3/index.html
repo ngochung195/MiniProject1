@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cinema POS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Cinema POS (Mini - Project 3)</h1>
+
+    <section class="cinema">
+        <div class="screen">MÀN HÌNH</div>
+
+        <div class="seats">
+            <div id="seatMap"></div>
+        </div>
+    </section>
+
+    <section class="legend">
+        <div>
+            <span class="box empty"></span>
+            Ghế thường
+        </div>
+
+        <div>
+            <span class="box vip"></span>
+            Ghế VIP
+        </div>
+
+        <div>
+            <span class="box couple"></span>
+            Ghế đôi
+        </div>
+
+        <div>
+            <span class="box sold"></span>
+            Đã bán
+        </div>
+
+        <div>
+            <span class="box selected"></span>
+            Đang chọn
+        </div>
+    </section>
+
+    <div class="room-selector">
+
+        <button onclick="switchRoom(0)">
+            Phòng 1
+        </button>
+
+        <button onclick="switchRoom(1)">
+            Phòng 2
+        </button>
+
+        <button onclick="switchRoom(2)">
+            Phòng 3
+        </button>
+
+    </div>
+
+    <section class="sidebar">
+        <h2>Giỏ hàng</h2>
+
+        <div id="selectedSeats"></div>
+
+        <h3>
+            Tổng tiền:
+            <span id="total">0</span> VNĐ
+        </h3>
+
+        <button id="autoPickBtn">
+            Chọn nhanh
+        </button>
+
+        <button id="checkoutBtn">
+            Thanh toán
+        </button>
+    </section>
+    <section class="admin-dashboard">
+
+        <h2>Admin Dashboard</h2>
+
+        <input type="text" id="searchMovie" placeholder="Tìm phim...">
+
+        <button onclick="searchMovie()">
+            Tìm kiếm
+        </button>
+
+        <button onclick="sortByPrice()">
+            Sắp xếp giá
+        </button>
+
+        <button onclick="sortByRevenue()">
+            Sắp xếp doanh thu
+        </button>
+
+        <div id="movieList"></div>
+
+    </section>
+
+    <section class="report-dashboard">
+
+        <h2>Báo cáo DataStream</h2>
+
+        <button onclick="showVipTickets()">
+            Vé VIP đã bán
+        </button>
+
+        <button onclick="showTotalRevenue()">
+            Tổng doanh thu
+        </button>
+
+        <button onclick="printTickets()">
+            In vé
+        </button>
+
+        <div id="reportResult"></div>
+
+    </section>
+    <section class="report">
+        <h2>Doanh thu</h2>
+        <canvas id="revenueChart" width="700" height="300">
+        </canvas>
+    </section>
+
+    <script src="mathUtils.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
